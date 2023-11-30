@@ -1,0 +1,74 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/gctronic/e-puck/protos/E-puckGroundSensors.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/factory/containers/protos/WoodenBox.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5619209500657284 0.5633276355566691 0.6057283391879247 2.0501387726667457
+  position 0.02726271111499856 -0.3041209842945608 3.8302900484183335
+}
+RectangleArena {
+  rotation 0 1 0 0
+  name "GROUNDBORDER"
+  floorSize 2.2 1.8
+  floorTileSize 2.2 1.8
+  floorAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "../downloads/floor_texture_lab2.png"
+      ]
+      repeatS FALSE
+      repeatT FALSE
+      filtering 1
+    }
+    roughness 1
+    metalness 0
+  }
+  wallThickness 0.0025
+  wallHeight 0.05
+}
+TexturedBackground {
+  texture "empty_office"
+}
+DEF Controller E-puck {
+  hidden position_0_0 2545.398659557197
+  hidden position_0_1 2555.476987453264
+  hidden rotation_1 0 -0.9999999999999999 0 5.5745751577152305
+  hidden rotation_2 0 1 0 4.503752738351864
+  translation 0.185184 0.198152 -0.00205973
+  rotation 0.053102192139799394 -0.9984839448925759 0.014490306473895532 0.004304541353047687
+  controller "e-puck_light_lab2"
+  window "<generic>"
+  groundSensorsSlot [
+    E-puckGroundSensors {
+    }
+  ]
+}
+DEF Light SpotLight {
+  attenuation 0 0 2
+  beamWidth 0.3
+  cutOffAngle 0.4
+  direction -0.7 -0.7 -0.5
+  intensity 10
+  location 1.2 1 0.2
+}
+WoodenBox {
+  translation 0.78 0.57 0.05
+  name "wooden box 1"
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation 0.74 0.26 0.05
+  name "wooden box 2"
+  size 0.1 0.1 0.1
+}
+Robot {
+  name "Supervisor"
+  controller "supervisor_lab2"
+  supervisor TRUE
+}

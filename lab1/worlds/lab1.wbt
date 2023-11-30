@@ -1,0 +1,66 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/gctronic/e-puck/protos/E-puckGroundSensors.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/factory/containers/protos/WoodenBox.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position -0.18 -1.2754175947106748e-15 5.793970204280771
+}
+RectangleArena {
+  name "GROUNDBORDER"
+  floorSize 2.2 1.8
+  floorTileSize 2.2 1.8
+  floorAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "../downloads/circuit_line_lab1.jpg"
+      ]
+      repeatS FALSE
+      repeatT FALSE
+      filtering 1
+    }
+    roughness 1
+    metalness 0
+  }
+  wallThickness 0.025
+  wallHeight 0.05
+}
+PointLight {
+  attenuation 0 0 1
+  intensity 3
+  location 0 0 1
+}
+TexturedBackground {
+  texture "empty_office"
+}
+E-puck {
+  hidden position_0_0 9030.206423917083
+  hidden position_0_1 9513.221414545156
+  hidden linearVelocity_0 1.3110202578791747e-10 3.780039984728016e-12 -1.3016100789779255e-11
+  hidden angularVelocity_0 3.4941596490980375e-10 4.429852721034923e-10 3.3254325108592723e-09
+  hidden translation_1 0 0.02600000000000003 0.02
+  hidden rotation_1 0 -1 0 1.2915315468524347
+  hidden linearVelocity_1 1.0611924938952175e-10 -8.517533034939755e-11 -1.4676260302970922e-12
+  hidden angularVelocity_1 -0.9999998427603567 3.2111179564950425e-08 1.4353938754318981e-08
+  hidden translation_2 0 -0.026 0.02
+  hidden rotation_2 0 -1 0 0.47852557501100784
+  hidden linearVelocity_2 1.606536843194336e-10 8.937364492802086e-11 -2.344897613875055e-11
+  hidden angularVelocity_2 -0.49999984276009424 -1.8138265106043173e-08 -6.2727559296702085e-09
+  translation -0.19081033416808457 -0.08677209495551777 -4.1544007826707294e-05
+  rotation -0.0020416838560593066 0.0020416865106572374 -0.9999958315129238 -1.5708004985052026
+  controller "e-puck_line_lab1"
+  groundSensorsSlot [
+    E-puckGroundSensors {
+    }
+  ]
+}
+WoodenBox {
+  translation -0.18 0 0.05
+  size 0.1 0.1 0.1
+}
